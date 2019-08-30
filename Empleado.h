@@ -21,14 +21,13 @@
 #include <string>
 #include<iostream>
 
-const int EmpleadoNumero = 100;
+const int EmpleadoNumeroMax = 100;
 
 using namespace std;
 
 class Empleado {
 protected:
 	string nombre;
-	int identificador;
 	int numEmple;
 	int annoexp;
 	double salaBas;
@@ -38,11 +37,21 @@ public:
 	Empleado(const string& nombre, int annoexp, float salabas, bool revisable);
 	string reporteEmpleado();
 	string getnombre();
-	int getidentificador();
 	int getnumEmple();
-	int annoexp();
-	double salabas();
-	bool revisable();
+	int getannoexp();
+	double getsalaBas();
+	bool getrevisable();
+
+	void setnombre(string);
+	void setnumEmple(int&);
+	void setannoexp(int);
+	void setsalaBas(double);
+	void setrevisable(bool);
+
+private:
+	int	aumentaSala(const int*);
+	static void revisionAlet(bool*);						   //aumentaSala(annoexp:int):double
+																// revisionAlet(revisable : bool)void
 
 
 
